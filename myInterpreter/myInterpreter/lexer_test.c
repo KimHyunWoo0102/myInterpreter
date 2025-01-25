@@ -16,23 +16,26 @@ int main() {
 		{COMMA_TOKEN,","},
 		{SEMICOLON_TOKEN,";"},
 		{EOF_TOKEN,""}
-	};
+	};//테스트케이스 생성
 
 	Lexer* lexer = New(input);
-	
+	//렉서를 만든후 분휴 시작
+
 	int len = sizeof(tests) / sizeof(Token);
+	
 	for (int i = 0; i < len; i++) {
 		Token* tok = NextToken(lexer);
 
 		if (tok->type != tests[i].type) {
-			printf("tests[%d] - tokentype wrong. expected = %d, got = %d\n", i, tests[i].type, tok->type);
+			printf("tests[%d] - tokentype wrong. expected = %s, got = %d\n", i,tests[i].type, tok->type);
 		}
 
 		if (strcmp(tok->literal, tests[i].literal) != 0) {
 			printf("tests[%d] - literal wrong. expected = %s, got = %s\n", i, tests[i].literal, tok->literal);
 		}
 
-		free(tok->literal);
+		printf("tests[%d]'s type = %s, literal = %s\n", i, tests[i].type, tok->literal);
+		//free(tok->literal);
 		free(tok);
 	}
 

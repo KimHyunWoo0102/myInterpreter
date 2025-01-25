@@ -5,14 +5,16 @@
 
 Lexer* New(char* input)
 {
+    //인풋 받으면 새롭게 Lexer 구조체 만들어서 input 저장해두는 함수
     Lexer* l = (Lexer*)malloc(sizeof(Lexer));
 
     l->input = _strdup(input);
+
     if (!l->input) {
         fprintf(stderr, "Memory allocation failed for input string\n");
         free(l);
         exit(EXIT_FAILURE);
-    }
+    }//인풋이 없을때 오류메시지 생성과 종료
 
     l->ch = 0;
     l->position = 0;
@@ -45,31 +47,37 @@ Token* NextToken(Lexer* lexer)
     switch (lch)
     {
     case '=':
-        tok = newToken(ASSIGN_TOKEN);
+        tok = newToken(ASSIGN_TOKEN, lch);
         break;
     case ';':
-        tok = newToken(SEMICOLON_TOKEN);
+        tok = newToken(SEMICOLON_TOKEN, lch);
         break;
     case '(':
-        tok = newToken(LPAREN_TOKEN);
+        tok = newToken(LPAREN_TOKEN, lch);
         break;
     case ')':
-        tok = newToken(RPAREN_TOKEN);
+        tok = newToken(RPAREN_TOKEN, lch);
         break;
     case ',':
-        tok = newToken(COMMA_TOKEN);
+        tok = newToken(COMMA_TOKEN, lch);
         break;
     case '+':
-        tok = newToken(PLUS_TOKEN);
+        tok = newToken(PLUS_TOKEN, lch);
         break;
     case '{':
-        tok = newToken(LBRACE_TOKEN);
+        tok = newToken(LBRACE_TOKEN, lch);
         break;
     case '}':
-        tok = newToken(RBRACE_TOKEN);
+        tok = newToken(RBRACE_TOKEN, lch);
         break;
     case 0:
         tok = (Token*)malloc(sizeof(Token));
+
+        if (tok == NULL) {
+            printf("Memory allocation failed for tok.\n");
+            exit(1); // 프로그램 종료
+        }
+
         tok->type = EOF_TOKEN;
         tok->literal = _strdup("");
         break;
@@ -81,10 +89,17 @@ Token* NextToken(Lexer* lexer)
 }
 
 
-Token*newToken(TokenType token)
+Token*newToken(TokenType token, char* input)
 {
     Token* newToken = (Token*)malloc(sizeof(Token));
-    newToken->literal = _strdup(TokenTypeNames[token]);
+    char* str = (char*)malloc(2);
+    str[0] = input;  // 입력받은 char를 첫 번째 위치에 저장
+    str[1] = '\0';   // 문자열 종료 문자 추가
+
+    //토큰 받으면 input 받아서 리터럴 처리한후에 토큰 객체 돌려주기
+    //newToken->literal = _strdup(TokenTypeNames[token]);
+    //그냥 어차피 상수 포인터로 가르키기만 할건데 이렇게 해도 될듯...?
     newToken->type = token;
+    newToken->literal = _strdup(str);
     return newToken;
 }

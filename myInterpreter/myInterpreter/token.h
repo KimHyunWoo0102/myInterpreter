@@ -1,48 +1,32 @@
 #pragma once
 
-typedef enum _tokenType{
-	ILLEGAL_TOKEN,
-	EOF_TOKEN,
-	//식별자 + 리터럴
-	IDENT_TOKEN,
-	INT_TOKEN,
+#define ILLEGAL_TOKEN "ILLEGAL_TOKEN"
+#define EOF_TOKEN "EOF"
+#define IDENT_TOKEN "IDENT"
+#define INT "INT"
 
-	//연산자
-	ASSIGN_TOKEN,
-	PLUS_TOKEN,
+// 연산자
+#define ASSIGN_TOKEN "="
+#define PLUS_TOKEN "+"
 
-	//구분자
-	COMMA_TOKEN,
-	SEMICOLON_TOKEN,
+// 구분자
+#define COMMA_TOKEN ","
+#define SEMICOLON_TOKEN ";"
 
-	LPAREN_TOKEN,
-	RPAREN_TOKEN,
-	LBRACE_TOKEN,
-	RBRACE_TOKEN,
+#define LPAREN_TOKEN "("
+#define RPAREN_TOKEN ")"
+#define LBRACE_TOKEN "{"
+#define RBRACE_TOKEN "}"
 
-	//예약어
-	FUNCTION_TOKEN,
-	LET_TOKEN
-}TokenType;
+// 예약어
+#define FUNCTION_TOKEN "FUNCTION"
+#define LET_TOKEN "LET"
 
-static const char* TokenTypeNames[] = {
-	"ILLEGAL",
-	"EOF",
-	"IDENT",
-	"INT",
-	"=",
-	"+",
-	",",
-	";",
-	"(",
-	")",
-	"{",
-	"}",
-	"FUNCTION",
-	"LET"
-};
+typedef const char* TokenType;
 
 typedef struct _token {
 	TokenType type;
 	char* literal;
+	//type은 enum으로 저장해 두다가 나중에 필요하면 TokenType으로 사용하고
+	//literal은 어떤건지 특정하게 받아오는것 얘를 들어 5가 저장되고 이걸 INT로 나중에 토큰 타입으로 두기
 }Token;
