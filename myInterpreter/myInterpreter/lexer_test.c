@@ -4,18 +4,50 @@
 #include<string.h>
 
 int main() {
-	const char* input = "=+(){},;";
+	const char* input = "let five = 5; "
+		"let ten = 10; "
+		"let add = fn(x, y) { x + y; }; "
+		"let result = add(five, ten);";
+
 	
 	Token tests[] = {
+		{LET_TOKEN,"let"},
+		{IDENT_TOKEN,"five"},
 		{ASSIGN_TOKEN,"="},
-		{PLUS_TOKEN,"+"},
+		{INT,"5"},
+		{SEMICOLON_TOKEN,";"},
+		{LET_TOKEN,"let"},
+		{IDENT_TOKEN,"ten"},
+		{ASSIGN_TOKEN,"="},
+		{INT,"10"},
+		{SEMICOLON_TOKEN,";"},
+		{LET_TOKEN,"let"},
+		{IDENT_TOKEN,"add"},
+		{ASSIGN_TOKEN,"="},
+		{FUNCTION_TOKEN,"fn"},
 		{LPAREN_TOKEN,"("},
+		{IDENT_TOKEN,"x"},
+		{COMMA_TOKEN,","},
+		{IDENT_TOKEN,"y"},
 		{RPAREN_TOKEN,")"},
 		{LBRACE_TOKEN,"{"},
-		{RBRACE_TOKEN,"}"},
-		{COMMA_TOKEN,","},
+		{IDENT_TOKEN,"x"},
+		{PLUS_TOKEN,"+"},
+		{IDENT_TOKEN,"y"},
 		{SEMICOLON_TOKEN,";"},
-		{EOF_TOKEN,""}
+		{RBRACE_TOKEN,"}"},
+		{SEMICOLON_TOKEN,";"},
+		{LET_TOKEN,"let"},
+		{IDENT_TOKEN,"result"},
+		{ASSIGN_TOKEN,"="},
+		{IDENT_TOKEN,"add"},
+		{LPAREN_TOKEN,"("},
+		{IDENT_TOKEN,"five"},
+		{COMMA_TOKEN,","},
+		{IDENT_TOKEN,"ten"},
+		{RPAREN_TOKEN,")"},
+		{SEMICOLON_TOKEN,";"},
+		{EOF_TOKEN,""},
 	};//테스트케이스 생성
 
 	Lexer* lexer = New(input);
@@ -27,7 +59,7 @@ int main() {
 		Token* tok = NextToken(lexer);
 
 		if (tok->type != tests[i].type) {
-			printf("tests[%d] - tokentype wrong. expected = %s, got = %d\n", i,tests[i].type, tok->type);
+			printf("tests[%d] - tokentype wrong. expected = %s, got = %s\n", i,tests[i].type, tok->type);
 		}
 
 		if (strcmp(tok->literal, tests[i].literal) != 0) {

@@ -39,9 +39,32 @@ void readChar(Lexer* lexer)
     //또한 현재 문자를 일단 보관을 해야하니
 }
 
+char* readNumber(Lexer* lexer)
+{
+    int position = lexer->position;
+
+    while (isDigit(lexer->ch)) {
+        readChar(lexer);
+    }
+    const int len = lexer->position - position;
+    char* str = (char*)malloc(len + 1);
+
+    if (str == NULL) {
+        printf("Memory allocation failed\n");
+        return;
+    }
+
+    strncpy_s(str, len + 1, lexer->input + position, len);
+
+    return str;
+}
+
 Token* NextToken(Lexer* lexer)
 {
     Token *tok=NULL;
+
+    skipWhitespace(lexer);
+
     char lch = lexer->ch;
 
     switch (lch)
@@ -81,6 +104,36 @@ Token* NextToken(Lexer* lexer)
         tok->type = EOF_TOKEN;
         tok->literal = _strdup("");
         break;
+
+    default:
+        if (isLetter(lch)) {
+            tok = (Token*)malloc(sizeof(Token));
+
+            if (tok == NULL) {
+                printf("Memory allocation failed for tok.\n");
+                exit(1); // 프로그램 종료
+            }
+
+            tok->literal = _strdup(readIdentifier(lexer));
+            tok->type = LookupIdent(tok->literal);
+            return tok;
+        }
+        else if (isDigit(lch)) {
+            tok = (Token*)malloc(sizeof(Token));
+
+            if (tok == NULL) {
+                printf("Memory allocation failed for tok.\n");
+                exit(1); // 프로그램 종료
+            }
+
+            tok->type = INT;
+            tok->literal = readNumber(lexer);
+
+            return tok;
+        }
+        else {
+            tok = newToken(ILLEGAL_TOKEN, lch);
+        }
     }
 
     readChar(lexer);
@@ -89,7 +142,7 @@ Token* NextToken(Lexer* lexer)
 }
 
 
-Token*newToken(TokenType token, char* input)
+Token*newToken(TokenType token, char input)
 {
     Token* newToken = (Token*)malloc(sizeof(Token));
     char* str = (char*)malloc(2);
@@ -102,4 +155,50 @@ Token*newToken(TokenType token, char* input)
     newToken->type = token;
     newToken->literal = _strdup(str);
     return newToken;
+}
+
+void skipWhitespace(Lexer* l)
+{
+    while (l->ch == ' ' || l->ch == '\t' || l->ch == '\n' || l->ch == '\r')
+        readChar(l);
+}
+
+bool isLetter(char ch)
+{
+    return 'a'<=ch&&ch<='z'||'A'<=ch&&ch<='Z'||ch=='_';
+}
+
+bool isDigit(char ch)
+{
+    return '0'<=ch&&ch<='9';
+}
+
+char* readIdentifier(Lexer* l)
+{
+    int position = l->position;
+    while (isLetter(l->ch)) {
+        readChar(l);
+    }
+
+    const int len = l->position - position;
+    char* str = (char*)malloc(len + 1);
+
+    if (str == NULL) {
+        printf("Memory allocation failed\n");
+        return;
+    }
+
+    strncpy_s(str, len + 1, l->input + position, len);
+
+    return str;
+}
+
+const char* LookupIdent(const char* ident) {
+    if (strcmp(ident, "fn") == 0) {
+        return FUNCTION_TOKEN;
+    }
+    if (strcmp(ident, "let") == 0) {
+        return LET_TOKEN;
+    }
+    return IDENT_TOKEN;  // 매칭되는 키워드가 없으면 IDENT 반환
 }
