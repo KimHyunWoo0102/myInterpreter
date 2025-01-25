@@ -39,6 +39,16 @@ void readChar(Lexer* lexer)
     //또한 현재 문자를 일단 보관을 해야하니
 }
 
+char peekChar(Lexer* l)
+{
+    if (l->readPosition >= strlen(l->input)) {
+        return 0;//참조를 넘어가면 0 리턴
+    }
+    else {
+        return l->input[l->readPosition];
+    }
+}
+
 char* readNumber(Lexer* lexer)
 {
     int position = lexer->position;
@@ -70,7 +80,13 @@ Token* NextToken(Lexer* lexer)
     switch (lch)
     {
     case '=':
-        tok = newToken(ASSIGN_TOKEN, lch);
+        if (peekChar(lexer) == '=') {
+            readChar(lexer);
+            tok = (Token*)malloc(sizeof(Token));
+
+            tok->type = EQ_TOKEN;
+            tok->literal = "==";
+        }else tok = newToken(ASSIGN_TOKEN, lch);
         break;
     case ';':
         tok = newToken(SEMICOLON_TOKEN, lch);
@@ -86,6 +102,31 @@ Token* NextToken(Lexer* lexer)
         break;
     case '+':
         tok = newToken(PLUS_TOKEN, lch);
+        break;
+    case '-':
+        tok = newToken(MINUS_TOKEN, lch);
+        break;
+    case '!':
+        if (peekChar(lexer) == '=') {
+            readChar(lexer);
+            tok = (Token*)malloc(sizeof(Token));
+
+            tok->type = NOT_EQ_TOKEN;
+            tok->literal = "!=";
+        }
+        else tok = newToken(BANG_TOKEN, lch);
+        break;
+    case '*':
+        tok = newToken(ASTERISK_TOKEN, lch);
+        break;
+    case '/':
+        tok = newToken(SLASH_TOKEN, lch);
+        break;
+    case '<':
+        tok = newToken(LT_TOKEN, lch);
+        break;
+    case '>':
+        tok = newToken(GT_TOKEN, lch);
         break;
     case '{':
         tok = newToken(LBRACE_TOKEN, lch);
@@ -200,5 +241,21 @@ const char* LookupIdent(const char* ident) {
     if (strcmp(ident, "let") == 0) {
         return LET_TOKEN;
     }
+    if (strcmp(ident, "true") == 0) {
+        return TRUE_TOKEN;
+    }
+    if (strcmp(ident, "false") == 0) {
+        return FALSE_TOKEN;
+    }
+    if (strcmp(ident, "if") == 0) {
+        return IF_TOKEN;
+    }
+    if (strcmp(ident, "else") == 0) {
+        return ELSE_TOKEN;
+    }
+    if (strcmp(ident, "return") == 0) {
+        return RETURN_TOKEN;
+    }
+
     return IDENT_TOKEN;  // 매칭되는 키워드가 없으면 IDENT 반환
 }

@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\lexer_test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|solutionrelative:myInterpreter\\lexer_test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|solutionrelative:myInterpreter\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\repl.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|solutionrelative:myInterpreter\\repl.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\lexer.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|solutionrelative:myInterpreter\\lexer.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\token.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|solutionrelative:myInterpreter\\token.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\lexer_test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|solutionrelative:myInterpreter\\lexer_test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\lexer_test.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|solutionrelative:myInterpreter\\lexer_test.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\lexer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|solutionrelative:myInterpreter\\lexer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\token.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|solutionrelative:myInterpreter\\token.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\repl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A67DAEA7-66D0-440C-9AB9-61FC6D421BCF}|myInterpreter\\myInterpreter.vcxproj|solutionrelative:myInterpreter\\repl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,15 +46,15 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "lexer.h",
-              "DocumentMoniker": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\lexer.h",
-              "RelativeDocumentMoniker": "myInterpreter\\lexer.h",
-              "ToolTip": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\lexer.h",
-              "RelativeToolTip": "myInterpreter\\lexer.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAfAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "lexer_test.h",
+              "DocumentMoniker": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\lexer_test.h",
+              "RelativeDocumentMoniker": "myInterpreter\\lexer_test.h",
+              "ToolTip": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\lexer_test.h",
+              "RelativeToolTip": "myInterpreter\\lexer_test.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-25T07:08:40.831Z",
+              "WhenOpened": "2025-01-25T11:59:38.566Z",
               "EditorCaption": ""
             },
             {
@@ -49,33 +65,85 @@
               "RelativeDocumentMoniker": "myInterpreter\\token.h",
               "ToolTip": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\token.h",
               "RelativeToolTip": "myInterpreter\\token.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAcwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-25T07:08:39.177Z",
+              "WhenOpened": "2025-01-25T11:55:29.986Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "main.c",
+              "DocumentMoniker": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\main.c",
+              "RelativeDocumentMoniker": "myInterpreter\\main.c",
+              "ToolTip": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\main.c*",
+              "RelativeToolTip": "myInterpreter\\main.c*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-01-25T11:26:43.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "lexer_test.c",
               "DocumentMoniker": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\lexer_test.c",
               "RelativeDocumentMoniker": "myInterpreter\\lexer_test.c",
               "ToolTip": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\lexer_test.c",
               "RelativeToolTip": "myInterpreter\\lexer_test.c",
-              "ViewState": "AgIAACgAAAAAAAAAAAAcwE4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAE8AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-01-25T04:55:19.128Z",
+              "WhenOpened": "2025-01-25T11:24:18.785Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "repl.c",
+              "DocumentMoniker": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\repl.c",
+              "RelativeDocumentMoniker": "myInterpreter\\repl.c",
+              "ToolTip": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\repl.c",
+              "RelativeToolTip": "myInterpreter\\repl.c",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAcwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-01-25T11:15:41.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "repl.h",
+              "DocumentMoniker": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\repl.h",
+              "RelativeDocumentMoniker": "myInterpreter\\repl.h",
+              "ToolTip": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\repl.h",
+              "RelativeToolTip": "myInterpreter\\repl.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-25T11:10:08.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "lexer.h",
+              "DocumentMoniker": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\lexer.h",
+              "RelativeDocumentMoniker": "myInterpreter\\lexer.h",
+              "ToolTip": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\lexer.h",
+              "RelativeToolTip": "myInterpreter\\lexer.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-25T07:08:40.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "lexer.c",
               "DocumentMoniker": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\lexer.c",
               "RelativeDocumentMoniker": "myInterpreter\\lexer.c",
               "ToolTip": "C:\\Users\\rlagu\\source\\repos\\InterpreterWithC\\myInterpreter\\myInterpreter\\lexer.c",
               "RelativeToolTip": "myInterpreter\\lexer.c",
-              "ViewState": "AgIAAKYAAAAAAAAAAAAcwMwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAM0AAAAAAAAAAAAcwAEBAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-01-12T14:59:47.725Z",
               "EditorCaption": ""
