@@ -30,6 +30,15 @@
     <ClInclude Include="lexer_test.h">
       <Filter>test</Filter>
     </ClInclude>
+    <ClInclude Include="ast.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="parser.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="parser_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lexer_test.c">
@@ -43,6 +52,15 @@
     </ClCompile>
     <ClCompile Include="main.c">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="ast.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="parser.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="parser_test.c">
+      <Filter>test</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

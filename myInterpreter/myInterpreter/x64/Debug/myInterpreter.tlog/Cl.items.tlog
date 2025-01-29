@@ -1,4 +1,7 @@
+C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\ast.c;C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\x64\Debug\ast.obj
 C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\lexer.c;C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\x64\Debug\lexer.obj
 C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\lexer_test.c;C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\x64\Debug\lexer_test.obj
 C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\main.c;C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\x64\Debug\main.obj
+C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\parser.c;C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\x64\Debug\parser.obj
+C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\parser_test.c;C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\x64\Debug\parser_test.obj
 C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\repl.c;C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\x64\Debug\repl.obj

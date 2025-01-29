@@ -23,7 +23,7 @@ void start(FILE*in,FILE*out)
 			line[len - 1] = '\0';
 		}
 
-		Lexer* lexer = New(line);
+		Lexer* lexer = NewLexer(line);
 
 		while (true) {
 			Token *tok = NextToken(lexer);

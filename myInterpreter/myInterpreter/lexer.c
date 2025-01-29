@@ -3,7 +3,7 @@
 #include<stdio.h>
 #include<string.h>
 
-Lexer* New(char* input)
+Lexer* NewLexer(char* input)
 {
     //인풋 받으면 새롭게 Lexer 구조체 만들어서 input 저장해두는 함수
     Lexer* l = (Lexer*)malloc(sizeof(Lexer));
@@ -194,7 +194,7 @@ Token*newToken(TokenType token, char input)
     //newToken->literal = _strdup(TokenTypeNames[token]);
     //그냥 어차피 상수 포인터로 가르키기만 할건데 이렇게 해도 될듯...?
     newToken->type = token;
-    newToken->literal = _strdup(str);
+    newToken->literal = str;
     return newToken;
 }
 

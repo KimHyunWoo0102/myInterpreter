@@ -97,7 +97,7 @@ void test_start() {
 	};
 
 
-	Lexer* lexer = New(input);
+	Lexer* lexer = NewLexer(input);
 	//렉서를 만든후 분휴 시작
 
 	int len = sizeof(tests) / sizeof(Token);

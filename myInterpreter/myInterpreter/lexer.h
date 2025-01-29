@@ -9,7 +9,7 @@ typedef struct _lexer {
 	char ch;//현재 조사하는 문자
 }Lexer;
 
-Lexer* New(char* input);
+Lexer* NewLexer(char* input);
 void readChar(Lexer* lexer);
 char peekChar(Lexer* l);
 char* readNumber(Lexer* lexer);
