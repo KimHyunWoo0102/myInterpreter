@@ -11,7 +11,11 @@ const char* identifierTokenLiteral(void* self) {
     Identifier* id = (Identifier*)self; // self를 Identifier로 변환
     return id->token->literal;  // Identifier에 대한 TokenLiteral 반환
 }
-
+const char* returnTokenLiteral(void* self)
+{
+    ReturnStatement* rs = (ReturnStatement*)self;
+    return rs->token->literal;
+}
 // Program 메서드 구현 (프로그램에서 첫 번째 Statement의 TokenLiteral 호출)
 const char* programTokenLiteral(Program* p) {
     if (p->statementsNum > 0) {
@@ -20,21 +24,33 @@ const char* programTokenLiteral(Program* p) {
     return "";
 }
 
+
+
+
+
 // LetStatement 및 Identifier 객체 생성 함수
 LetStatement* newLetStatement() {
     LetStatement* ls = (LetStatement*)malloc(sizeof(LetStatement));
     // LetStatement의 TokenLiteral 함수 포인터를 설정
     ls->node.TokenLiteral = letTokenLiteral;
-
+    ls->node.statementType = LET;
     return ls;
 }
 
 Identifier* newIdentifier() {
     Identifier* id = (Identifier*)malloc(sizeof(Identifier));
    
-    id->TokenLiteral = identifierTokenLiteral;
+    id->node.TokenLiteral = identifierTokenLiteral;
+    id->node.statementType = IDENTIFIER;
     return id;
 }
 
+ReturnStatement* newReturnStatement()
+{
+    ReturnStatement* rs = (ReturnStatement*)malloc(sizeof(ReturnStatement));
+    rs->node.TokenLiteral = returnTokenLiteral;
+    rs->node.statementType = RETURN;
+    return rs;
+}
 
 

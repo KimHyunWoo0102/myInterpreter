@@ -32,8 +32,12 @@ void start(FILE*in,FILE*out)
 				break;
 			}
 			fprintf(out, "{Type:%s, Literal:%s}\n", tok->type, tok->literal);
+
+			free(tok->literal);
+			free(tok);
 		}
 
+		free(lexer->input);
 		free(lexer);
 	}
 }

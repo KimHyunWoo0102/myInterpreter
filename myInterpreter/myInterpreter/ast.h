@@ -6,10 +6,11 @@
 
 // Node 인터페이스를 위한 함수 포인터 정의
 typedef const char* (*TokenLiteralFunc)(void*);
-
+typedef enum statementType { LET, RETURN ,IDENTIFIER}StatementType;
 
 typedef struct _node {
     TokenLiteralFunc TokenLiteral;
+    StatementType statementType; //나중에 free 시키기 위함
 }Node;
 
 // Statement, Expression 구조체 정의 (Node "상속" 역할)
@@ -26,7 +27,7 @@ typedef struct _expression {
 // Identifier 구조체 정의
 typedef struct _identifier {
     Token* token;                      // Identifier의 토큰
-    TokenLiteralFunc TokenLiteral;     // TokenLiteral 메서드
+    Node node;     
     char* value;                       // Identifier 값
 } Identifier;
 
@@ -38,21 +39,25 @@ typedef struct _letStatement {
     Expression* value;                 // 변수 값
 } LetStatement;
 
+typedef struct _returnStatement {
+    Node node;
+    Token* token;
+    Expression* returnValue;
+}ReturnStatement;
 // Program 구조체 정의
 typedef struct _program {
     Statement** statements;            // Statement 포인터 배열
     int statementsNum;                 // Statement 수
 } Program;
 
-// 함수 선언
 
-// LetStatement 관련 함수
-LetStatement* newLetStatement();
+const char* identifierTokenLiteral(void* self);
+const char* programTokenLiteral(Program* p);
+const char* returnTokenLiteral(void* self);
+
+
 const char* letTokenLiteral(void* self);
 
-// Identifier 관련 함수
+LetStatement* newLetStatement();
 Identifier* newIdentifier();
-const char* identifierTokenLiteral(void* self);
-
-// Program 관련 함수
-const char* programTokenLiteral(Program* p);
+ReturnStatement* newReturnStatement();

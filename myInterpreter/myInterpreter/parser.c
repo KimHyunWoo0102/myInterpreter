@@ -6,7 +6,7 @@ Parser* NewParser(Lexer* l)
 {
     Parser* parser = (Parser*)malloc(sizeof(Parser));  // Parser 메모리 할당
     parser->l = l;  // Parser의 l 필드를 주어진 Lexer 포인터로 초기화
-   
+    parser->errorsNum = 0;
     pNextToken(parser);
     pNextToken(parser);//토큰 세팅
 
@@ -46,6 +46,8 @@ Statement* parseStatement(Parser* p) {
 
     if (strcmp(type, LET_TOKEN) == 0)
         return (Statement*)parseLetStatement(p);
+    if (strcmp(type, RETURN_TOKEN) == 0)
+        return (Statement*)parseReturnStatement(p);
     return NULL;
 }
 
@@ -78,6 +80,20 @@ LetStatement* parseLetStatement(Parser* p) {
     return stmt;
 }
 
+ReturnStatement* parseReturnStatement(Parser* p)
+{
+    ReturnStatement* stmt = newReturnStatement();
+    stmt->token = p->curToken;
+
+    pNextToken(p);
+
+    while (!curTokenIs(p, SEMICOLON_TOKEN)) {
+        pNextToken(p);
+    }
+
+    return stmt;
+}
+
 bool curTokenIs(Parser* p, TokenType t)
 {
     return p->curToken->type==t;
@@ -94,6 +110,44 @@ bool expectPeek(Parser* p, TokenType t)
         pNextToken(p);
         return true;
     }
+    peekError(p, t);
     return false;
+}
+
+const char** Errors(Parser* p)
+{
+    return p->errors;
+}
+
+void peekError(Parser* p, TokenType t)
+{
+    const char* format = "expected next token to be %s, got %s instead";
+
+    int size = snprintf(NULL, 0, format, t, p->peekToken->type) + 1;  // 필요한 크기 계산
+    char* error = (char*)malloc(size);
+
+    if (error == NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+
+    snprintf(error, size, format, t, p->peekToken->type);
+
+    if (error) {
+        printf("%s\n", error);  // 출력: expected next token to be LET, got INT instead
+        free(error);  // 동적 할당 해제
+        return;
+    }
+
+    p->errorsNum++;
+    p->errors = (char**)realloc(p->errors, sizeof(char*) * p->errorsNum);
+    if (p->errors == NULL) {
+        // 메모리 할당 실패 처리
+        printf("Memory allocation failed!\n");
+    }
+    else {
+        p->errors[p->errorsNum - 1] = error;
+        // 메모리 할당 성공 시 업데이트
+    }
 }
 

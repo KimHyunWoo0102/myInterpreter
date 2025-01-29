@@ -85,7 +85,7 @@ Token* NextToken(Lexer* lexer)
             tok = (Token*)malloc(sizeof(Token));
 
             tok->type = EQ_TOKEN;
-            tok->literal = "==";
+            tok->literal = _strdup("==");
         }else tok = newToken(ASSIGN_TOKEN, lch);
         break;
     case ';':
@@ -112,7 +112,7 @@ Token* NextToken(Lexer* lexer)
             tok = (Token*)malloc(sizeof(Token));
 
             tok->type = NOT_EQ_TOKEN;
-            tok->literal = "!=";
+            tok->literal = _strdup("!=");
         }
         else tok = newToken(BANG_TOKEN, lch);
         break;

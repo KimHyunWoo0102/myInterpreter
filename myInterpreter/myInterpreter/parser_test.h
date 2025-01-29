@@ -1,2 +1,3 @@
 #pragma once
-void parser_test();
+void TestLetStatement();
+void TestReturnStatement();
