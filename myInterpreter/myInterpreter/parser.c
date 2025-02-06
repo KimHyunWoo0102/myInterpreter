@@ -21,9 +21,7 @@ void pNextToken(Parser* p)
 
 Program* ParseProgram(Parser* p)
 {
-    Program* program = (Program*)malloc(sizeof(Program));
-    program->statements = NULL;
-    program->statementsNum = 0;
+    Program* program = newProgram();
     //프로그램 만든후(statements 저장할 구조체) 초기화
 
 

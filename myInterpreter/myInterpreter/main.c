@@ -6,7 +6,7 @@
 #include"parser_test.h"
 
 int main() {
-  	//TestLetStatement();
+  	TestLetStatement();
 	TestReturnStatement();
 	/*char username[UNLEN + 1];
 	DWORD username_len = UNLEN + 1;

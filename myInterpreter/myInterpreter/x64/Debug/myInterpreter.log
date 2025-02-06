@@ -1,6 +1,2 @@
-﻿  parser_test.c
-C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\parser_test.c(29,25): warning C4090: '함수': 다른 'const' 한정자
-C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\parser_test.c(54,9): warning C4013: 'testLetStatement'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\parser_test.c(131,25): warning C4090: '함수': 다른 'const' 한정자
-C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\myInterpreter\parser_test.c(144,26): warning C4133: '초기화 중': 'Statement *'과(와) 'ReturnStatement *' 사이의 형식이 호환되지 않습니다.
-  myInterpreter.vcxproj -> C:\Users\rlagu\source\repos\InterpreterWithC\myInterpreter\x64\Debug\myInterpreter.exe
+﻿  main.c
+  myInterpreter.vcxproj -> C:\Users\hyunwoo\Source\Repos\myInterpreter\myInterpreter\x64\Debug\myInterpreter.exe

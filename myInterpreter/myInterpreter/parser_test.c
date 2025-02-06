@@ -143,8 +143,8 @@ void TestReturnStatement() {
     for (int i = 0; i < len; i++) {
         ReturnStatement* returnStmt = program->statements[i];
 
-        if (strcmp(returnStmt->node.TokenLiteral(returnStmt), "return") != 0) {
-            printf("returnStmt.TokenLiteral not \'return\', got %s\n", returnStmt->node.TokenLiteral(returnStmt));
+        if (strcmp(returnStmt->statement.node.TokenLiteral(returnStmt), "return") != 0) {
+            printf("returnStmt.TokenLiteral not \'return\', got %s\n", returnStmt->statement.node.TokenLiteral(returnStmt));
         }
     }
 }
