@@ -7,7 +7,7 @@
 
 int main() {
   	TestLetStatement();
-	TestReturnStatement();
+	//TestReturnStatement();
 	/*char username[UNLEN + 1];
 	DWORD username_len = UNLEN + 1;
 

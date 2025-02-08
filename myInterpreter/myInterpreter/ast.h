@@ -76,3 +76,10 @@ const char* printLetStmt(void*self);
 const char* printReturnStmt(void* self);
 const char* printExpressionStmt(void* self);
 const char* printIdentifier(void* self);
+
+void freeProgram(Program* p);
+void freeLetStmt(LetStatement* ls);
+void freeIdentifier(Identifier* i);
+void freeExpressionStmt(ExpressionStatement* es);
+
+void append_string(char** dest, const char* src);

@@ -155,7 +155,7 @@ Token* NextToken(Lexer* lexer)
                 exit(1); // 프로그램 종료
             }
 
-            tok->literal = _strdup(readIdentifier(lexer));
+            tok->literal = readIdentifier(lexer);
             tok->type = LookupIdent(tok->literal);
             return tok;
         }
@@ -258,4 +258,12 @@ const char* LookupIdent(const char* ident) {
     }
 
     return IDENT_TOKEN;  // 매칭되는 키워드가 없으면 IDENT 반환
+}
+
+void freeLexer(Lexer* l)
+{
+    if (l->input != NULL)
+        free(l->input);
+
+    free(l);
 }

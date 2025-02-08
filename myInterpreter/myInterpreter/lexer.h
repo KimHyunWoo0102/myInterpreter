@@ -21,3 +21,6 @@ bool isLetter(char ch);
 bool isDigit(char ch);
 char* readIdentifier(Lexer* l);
 const char* LookupIdent(const char* ident);
+
+
+void freeLexer(Lexer* l);

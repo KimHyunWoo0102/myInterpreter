@@ -146,21 +146,77 @@ const char* printIdentifier(void* self)
 
     return i->value;
 }
+void freeProgram(Program* p)
+{
+    for (int i = 0; i < p->statementsNum; i++) {
+        int type = p->statements[i]->node.statementType;
+        switch (type)
+        {
+        case LET:
+            freeLetStmt((LetStatement*)p->statements[i]);
+            break;
+        case RETURN:
+            break;
+        case IDENTIFIER:
+            break;
+        case EXPRESSIONSTMT:
+            break;
+
+        }
+    }
+
+    free(p->statements);
+    free(p);
+}
+void freeLetStmt(LetStatement* ls)
+{
+    freeToken(ls->token);
+
+    if (ls->name != NULL)
+        freeIdentifier(ls->name);
+
+    if (ls->value != NULL)
+        freeExpressionStmt(ls->value);
+
+    free(ls);
+}
+void freeIdentifier(Identifier* i)
+{
+    freeToken(i->token);
+    free(i);
+}
+void freeExpressionStmt(ExpressionStatement* es)
+{
+    free(es->token);
+    free(es);
+}
 void append_string(char** dest, const char* src) {
-    if (!src || !dest) return;  // dest가 NULL일 경우도 체크
+    if (!src || !dest) return;  // src 또는 dest가 NULL인지 확인
 
-    size_t new_len = (*dest ? strlen(*dest) : 0) + strlen(src) + 1;
+    size_t old_len = (*dest ? strlen(*dest) : 0);
+    size_t src_len = strlen(src);
+    size_t new_len = old_len + src_len + 1;  // 널 종료 문자 포함
+
     char* new_str = (char*)realloc(*dest, new_len);
-
     if (!new_str) {
         perror("Memory allocation failed");
         exit(1);
     }
 
-    if (*dest == NULL)  // 초기 상태라면 strcpy 사용
-        strcpy(new_str, src);
-    else
-        strcat(new_str, src);
+    if (old_len == 0) {
+        // 기존 문자열이 없을 경우 strcpy_s 사용
+        if (strcpy_s(new_str, new_len, src) != 0) {
+            perror("strcpy_s failed");
+            exit(1);
+        }
+    }
+    else {
+        // 기존 문자열이 있을 경우 strcat_s 사용
+        if (strcat_s(new_str, new_len, src) != 0) {
+            perror("strcat_s failed");
+            exit(1);
+        }
+    }
 
     *dest = new_str;
 }

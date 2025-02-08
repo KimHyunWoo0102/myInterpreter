@@ -7,6 +7,8 @@ Parser* NewParser(Lexer* l)
     Parser* parser = (Parser*)malloc(sizeof(Parser));  // Parser 메모리 할당
     parser->l = l;  // Parser의 l 필드를 주어진 Lexer 포인터로 초기화
     parser->errorsNum = 0;
+    parser->curToken = NULL;
+    parser->peekToken = NULL;
     pNextToken(parser);
     pNextToken(parser);//토큰 세팅
 
@@ -15,6 +17,7 @@ Parser* NewParser(Lexer* l)
 
 void pNextToken(Parser* p)
 {
+    //curToken은 결국 stmt들에 들어가니 ㄱㅊ
     p->curToken = p->peekToken;
     p->peekToken = NextToken(p->l);
 }
@@ -147,5 +150,17 @@ void peekError(Parser* p, TokenType t)
         p->errors[p->errorsNum - 1] = error;
         // 메모리 할당 성공 시 업데이트
     }
+}
+
+void freeParser(Parser* p)
+{
+    if(p->l!=NULL)
+        freeLexer(p->l);
+
+    for (int i = 0; i < p->errorsNum; i++) {
+        free(p->errors[i]);
+    }
+
+    free(p->errors);
 }
 

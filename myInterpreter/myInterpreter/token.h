@@ -44,3 +44,6 @@ typedef struct _token {
 	//type은 enum으로 저장해 두다가 나중에 필요하면 TokenType으로 사용하고
 	//literal은 어떤건지 특정하게 받아오는것 얘를 들어 5가 저장되고 이걸 INT로 나중에 토큰 타입으로 두기
 }Token;
+
+
+void freeToken(Token* token);

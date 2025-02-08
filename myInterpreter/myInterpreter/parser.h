@@ -26,3 +26,6 @@ bool expectPeek(Parser* p, TokenType t);
 
 const char** Errors(Parser* p);
 void peekError(Parser* p, TokenType t);
+
+
+void freeParser(Parser* p);

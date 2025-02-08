@@ -54,26 +54,8 @@ void TestLetStatement()
         testLetStatement(stmt, tests[i]);
     }
 
-    for (int i = 0; i < len; i++) {
-        LetStatement* stmt = (LetStatement*)program->statements[i];
-
-        free(stmt->token->literal);
-        free(stmt->token);
-        free(stmt->name);
-
-        free(stmt);
-    }
-
-    free(program->statements);
-    free(program);
-
-    free(l->input);
-    free(l);
-
-    for (int i = 0; i < p->errorsNum; i++)
-        free(p->errors[i]);
-    free(p->errors);
-    free(p);
+    freeProgram(program);
+    freeParser(p);
 }
 
 int testLetStatement(Statement* s, const char* name) {
@@ -147,4 +129,7 @@ void TestReturnStatement() {
             printf("returnStmt.TokenLiteral not \'return\', got %s\n", returnStmt->statement.node.TokenLiteral(returnStmt));
         }
     }
+
+    freeProgram(program);
+    freeParser(p);
 }

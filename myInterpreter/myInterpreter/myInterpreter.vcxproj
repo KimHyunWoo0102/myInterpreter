@@ -143,6 +143,7 @@
     <ClCompile Include="parser.c" />
     <ClCompile Include="parser_test.c" />
     <ClCompile Include="repl.c" />
+    <ClCompile Include="token.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
