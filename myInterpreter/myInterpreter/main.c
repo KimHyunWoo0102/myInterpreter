@@ -2,11 +2,12 @@
 #include <windows.h>
 #include <lmcons.h>
 #include <stdio.h>
-#include "lexer_test.h"
-#include"parser_test.h"
+#include "tests.h"
+
 
 int main() {
-  	TestLetStatement();
+	TestString();
+  	//TestLetStatement();
 	//TestReturnStatement();
 	/*char username[UNLEN + 1];
 	DWORD username_len = UNLEN + 1;

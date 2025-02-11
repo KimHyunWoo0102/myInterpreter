@@ -49,7 +49,8 @@ Statement* parseStatement(Parser* p) {
         return (Statement*)parseLetStatement(p);
     if (strcmp(type, RETURN_TOKEN) == 0)
         return (Statement*)parseReturnStatement(p);
-    return NULL;
+
+    return (Statement*)parseExpressionStatement(p);
 }
 
 LetStatement* parseLetStatement(Parser* p) {
@@ -89,6 +90,18 @@ ReturnStatement* parseReturnStatement(Parser* p)
     pNextToken(p);
 
     while (!curTokenIs(p, SEMICOLON_TOKEN)) {
+        pNextToken(p);
+    }
+
+    return stmt;
+}
+
+ExpressionStatement* parseExpressionStatement(Parser* p) {
+    ExpressionStatement* stmt = newExpressionStatement();
+    stmt->token = p->curToken;
+    stmt->expression = parserExpression(LOWEST,p);
+
+    if (!peekTokenis(p, SEMICOLON_TOKEN)) {
         pNextToken(p);
     }
 

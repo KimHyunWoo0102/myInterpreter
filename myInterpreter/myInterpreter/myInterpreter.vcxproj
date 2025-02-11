@@ -129,19 +129,17 @@
   <ItemGroup>
     <ClInclude Include="ast.h" />
     <ClInclude Include="lexer.h" />
-    <ClInclude Include="lexer_test.h" />
     <ClInclude Include="parser.h" />
-    <ClInclude Include="parser_test.h" />
+    <ClInclude Include="tests.h" />
     <ClInclude Include="repl.h" />
     <ClInclude Include="token.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ast.c" />
     <ClCompile Include="lexer.c" />
-    <ClCompile Include="lexer_test.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="parser.c" />
-    <ClCompile Include="parser_test.c" />
+    <ClCompile Include="tests.c" />
     <ClCompile Include="repl.c" />
     <ClCompile Include="token.c" />
   </ItemGroup>

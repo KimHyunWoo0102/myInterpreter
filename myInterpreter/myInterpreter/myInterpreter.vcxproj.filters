@@ -27,23 +27,17 @@
     <ClInclude Include="repl.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="lexer_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
     <ClInclude Include="ast.h">
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="parser.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="parser_test.h">
+    <ClInclude Include="tests.h">
       <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lexer_test.c">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="lexer.c">
       <Filter>src</Filter>
     </ClCompile>
@@ -59,7 +53,7 @@
     <ClCompile Include="parser.c">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="parser_test.c">
+    <ClCompile Include="tests.c">
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="token.c">

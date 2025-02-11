@@ -1,5 +1,7 @@
 #include "ast.h"
 #include<string.h>
+#include<stdio.h>
+#include<stdlib.h>
 
 
 const char* letTokenLiteral(void* self) {
@@ -88,9 +90,15 @@ const char* printProgram(void* self)
     Program* p = (Program*)self;
 
     int len = p->statementsNum;
-    char* str = NULL;
+    char* str = NULL, * tmp = NULL;
     for (int i = 0; i < len; i++) {
-        append_string(&str, p->statements[i]->node.PrintString(p->statements[i]));
+        if(tmp==NULL)
+            tmp = p->statements[i]->node.PrintString(p->statements[i]);
+
+        append_string(&str, tmp);
+
+        free(tmp);
+        tmp = NULL;
     }
     return str;
 }
@@ -133,18 +141,20 @@ const char* printReturnStmt(void* self)
 const char* printExpressionStmt(void* self)
 {
     ExpressionStatement* es = (ExpressionStatement*)self;
-
+    char* str = NULL;
     if (es->is_valid == 1) {
-        return es->expression.node.TokenLiteral(es);
-    }
-    return "";
+        str = _strdup(es->expression.node.TokenLiteral(es));
+        
+    }else
+        str = _strdup("");
+    return str;
 }
 
 const char* printIdentifier(void* self)
 {
     Identifier* i = (Identifier*)self;
-
-    return i->value;
+    char* str = _strdup(i->value);
+    return str;
 }
 void freeProgram(Program* p)
 {
@@ -175,8 +185,10 @@ void freeLetStmt(LetStatement* ls)
     if (ls->name != NULL)
         freeIdentifier(ls->name);
 
-    if (ls->value != NULL)
+    if (ls->value != NULL && ls->value->node.statementType == EXPRESSIONSTMT)
         freeExpressionStmt(ls->value);
+    else if (ls->value != NULL && ls->value->node.statementType == IDENTIFIER)
+        freeIdentifier(ls->value);
 
     free(ls);
 }

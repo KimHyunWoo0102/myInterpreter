@@ -1,3 +1,5 @@
+#pragma once
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -29,7 +31,7 @@ typedef struct _expression {
 // Identifier 구조체 정의
 typedef struct _identifier {
     Token* token;                      // Identifier의 토큰
-    Node node;     
+    Node node;
     char* value;                       // Identifier 값
 } Identifier;
 
@@ -57,7 +59,6 @@ typedef struct _program {
     Statement** statements;            // Statement 포인터 배열
     int statementsNum;                 // Statement 수
 } Program;
-
 
 const char* identifierTokenLiteral(void* self);
 const char* programTokenLiteral(void* self);
